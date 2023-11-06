@@ -1,0 +1,68 @@
+
+<html  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+
+	
+	
+	<div layout:fragment="content">
+   
+            
+<div class="container">       
+<div class="bd-example">
+  <table class="table table-hover">
+      <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">제목</th>
+      <th scope="col">작성자</th>
+      <th scope="col" class="d-flex justify-content-end">작성시간</th>
+    </tr>
+  </thead>
+  <tbody>
+	  
+	  
+<!--<th:block th:each="list:${lists}">	-->
+	<th:block th:each="list, loop :${paging}">  
+    <tr>
+      <th scope="row"><a th:text="${list.id}"></a></th>
+      <td><a th:href="@{|/board/readdetail?id=${list.id}|}" style="text-decoration-line: none;" th:text="${list.subject}"></a>&nbsp;&nbsp;<span class="badge text-bg-danger"><a th:text="${#lists.size(list.replyList)}"></span></td>
+       <td>작성자</td>
+      <td><a th:text="${#temporals.format(list.createDate, 'yyyy년 MM월 dd일 HH:mm')}" style="text-decoration-line: none;" class="d-flex justify-content-end"></a></td>
+      
+    </tr>
+</th:block>
+  
+  </tbody>
+
+  </table>
+  
+  
+  
+  <nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">	
+      <span class="page-link">이전페이지</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <span class="page-link">2</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">다음페이지</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+</div>
+<a th:href="@{/board/create}" class="w-4 btn btn-lg btn-outline-primary">게시물 등록</a>
+</div>  
+
+ 
+     </div>
+    
+

@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	 <form th:action="@{/answer/create}" th:object="${answer}" method="post">
+		 <p>제목 : <input type="text" name="subject"></p>
+		 <p>내용 : <input type="text" name="content"></p>
+		 <input type="submit" value="등록">
+		
+	 </form>
+</body>
+</html>

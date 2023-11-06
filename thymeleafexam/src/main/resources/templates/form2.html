@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!--<form action="form2.html" th:action="@{/form2}" method="post">
+	<p>번호 : <input type="text" name="cno">
+	<p>아이디 : <input type="text" name="cid">
+	<p>비밀번호 : <input type="text" name="cpw">
+	<p>메일 : <input type="text" name="cmail">
+	<p>주소 : <input type="text" name="caddr">
+	<input type="submit" value="등록">
+</form>
+-->
+						<!--object(객체)=customer(객체이름)으로 넘어간다-->
+<form th:action="@{/form2}" th:object="${customer}" method="post">
+	<p>번호 : <input type="text" name="cno">
+	<p>아이디 : <input type="text" name="cid">
+	<p>비밀번호 : <input type="text" name="cpw">
+	<p>메일 : <input type="text" name="cmail">
+	<p>주소 : <input type="text" name="caddr">
+	<input type="submit" value="등록">
+</form>
+</body>
+</html>

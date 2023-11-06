@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	 <form th:action="@{/update}" th:object="${question}" method="post">
+		 <p>제목 : <input type="text" name="subject" th:value="${list.subject}"></p>
+		 <p>내용 : <input type="text" name="content" th:value="${list.content}"></p>
+		 <input type="hidden" name="id" th:value="${list.id}">
+		 <input type="submit" value="수정">
+		
+	 </form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<script>
+	IMP.init('imp53783626')
+	
+	function requestPay() {
+ console.log(uuid());
+    IMP.request_pay({
+		
+      pg: "danal_tpay",
+      pay_method: "card",
+      merchant_uid: "ORD"+uuid(),   // 주문번호
+      name: "테스트 결제",
+     amount: "[[${total}]]",                         // 숫자 타입
+      buyer_email:"[[${user.username}]]",
+      buyer_name: "[[${user.name}]]",
+      buyer_tel: "[[${user.tel}]]",
+      buyer_addr: "[[${user.addr}]]",
+      buyer_postcode: "[[${user.postcode}]]"
+    }, function (rsp) { // callback
+		if(rsp.success){//결제 성공시
+		//컨트롤러로 성공시 성공 ID 값 전달
+		
+		location.href='/cart/payment?imp_uid' + rsp.imp_uid;
+			
+		}else{//결제 실패시
+		
+			
+		}
+
+
+    });
+  }
+</script>
+<script>
+function uuid() {
+  return 'xxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+console.log(uuid())
+</script>
+<body>
+
+ <th:block th:each="list:${list.itemList}">
+ [[${list.name}]] /
+ [[${list.price}]]
+ <br>
+  </th:block>
+  
+  총 합 : [[${total}]]
+  <br>
+   <button onclick="requestPay()">결 제</button>
+</body>
+</html>

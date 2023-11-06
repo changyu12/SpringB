@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+<mapper namespace="customer">
+  
+	<select id="readlist" resultType="com.example.y.customer.Customer">
+  		<![CDATA[
+	  		SELECT * 
+	  		FROM board
+  		]]>
+  	</select>
+  
+  	<select id="readdetail" parameterType="String" resultType="com.example.y.customer.Customer">
+  		<![CDATA[
+	  		SELECT * 
+	  		FROM board
+	  		WHERE username = #{username}
+  		]]>
+  	</select>
+  
+  	<insert id="create" parameterType="hashMap">
+  		<![CDATA[
+			INSERT INTO board
+			(username, password, cname, ctel, cimg)
+			VALUES
+			(#{username}, #{password}, #{cname}, #{ctel}, #{cimg})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="hashMap">
+  		<![CDATA[
+	  		UPDATE board
+	  		SET password = #{password}, cname = #{cname}, cimg = #{cimg}, ctel = #{ctel}
+	  		WHERE username = #{username}
+  		]]>
+  	</update>
+  	
+  	<delete id="delete" parameterType="String">
+  		<![CDATA[
+	  		DELETE FROM board
+	  		WHERE username = #{username}
+  		]]>
+  	</delete>
+	
+	
+ 	<select id="getUserById" parameterType="String" resultType="com.example.y.auth.CustomerUserDetails">
+  		<![CDATA[
+	  		SELECT * 
+	  		FROM board
+	  		WHERE username = #{username}
+  		]]>
+  	</select> 
+	
+  </mapper>

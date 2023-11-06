@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+main.html 입니다.
+
+<br>
+${hello}
+
+<br>
+<h1 th:text="${hello}">message</h1>
+
+<a href="/main2">main2</a>
+<br><br>
+
+<a href="/main3">main3</a>
+<br><br>
+
+<a href="/main3.html" th:href="@{/main3}">main3(타임리프문법이동)</a>
+						<!--컨트롤러에서 값을 가지고 나갈때 타임리프문법 사용-->
+						
+<br><br>					
+<a th:href="@{/main3}">main3(타임리프단축문법)</a>
+						<!--위에 문법 단축형-->
+<br><br>					
+<a href="/main4">main4</a>
+
+<br><br>					
+<a href="/form1">form1 일반문법</a>
+
+<br><br>					
+<a href="/form2">form2 타임리프 문법</a>
+
+<br><br>					
+<a href="/board/boardform">보드 폼</a>
+
+<br><br>					
+<a href="/image">이미지</a>
+
+<br><br>					
+<a th:href="@{/ifexam/ifexam1}">ifexam p eq ==</a>
+
+<br><br>					
+<a th:href="@{/ifexam/ifexam2}">ifexam2 falsecheck</a>
+
+<br><br>					
+<a th:href="@{/ifexam/switchexam1}">switchexam</a>
+
+<br><br>					
+<a th:href="@{/users/readlist}">E.T.A</a>
+</body>
+</html>

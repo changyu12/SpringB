@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<table border="1">
+	<tr>
+		<td>번호</td>
+		<td th:text="${board.bno}">bno</td>
+	</tr>
+	<tr>
+		<td>제목</td>
+		<td th:text="${board.btitle}">btitle</td>
+	</tr>
+	<tr>
+		<td>내용</td>
+		<td th:text="${board.bcontent}">bcontent</td>
+	</tr>
+	<tr>
+		<td>작성자</td>
+		<td th:text="${board.bwriter}">bwriter</td>
+	</tr>
+
+	
+	
+</table>
+
+
+
+</body>
+</html>

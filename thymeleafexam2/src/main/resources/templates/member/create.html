@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/member/create}" th:object="${member}" method="post">
+
+	<p>아이디:<input type="text" name="mid">
+	<p>암 호:<input type="text" name="mid">
+	<p>성 명:<input type="text" name="mid">
+	<p>성 별:<input type="radio" name="mid" value="m">남성
+			<input type="radio" name="mid" value="f">여성
+	<p>국 적:<select	th:field="*{mnation}">
+				<option th:value="korea">대한민국</option>
+				<option th:value="usa">미국</option>
+				<option th:value="japan">일본</option>
+				<option th:value="germany">독일</option>
+				<option th:value="australia">호주</option>
+			
+			</select>
+	
+		
+	<p><input type="submit" value="등록">
+</form>
+</body>
+</html>

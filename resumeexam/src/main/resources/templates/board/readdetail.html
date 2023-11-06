@@ -1,0 +1,119 @@
+
+<html  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+	<div layout:fragment="content">
+		<div class="container">
+   <div class="row-cols-md-1  text-center">
+           <div class="col ">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h2 class="my-0 fw-normal"><a th:text="${list.subject}"></a></h2>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title pricing-card-title"><a th:text="|${list.id}번|"></a><small class="text-body-secondary fw-light">/게시물</small></h4>
+            <ul class="list-unstyled mt-3 mb-4">
+              <h3><a th:text="${list.content}"></a></h3>
+              <a th:text="|작성일 : ${list.createDate}|"></a>
+              
+            </ul>
+            <a th:href="@{|/board/update?id=${list.id}|}" type="button" class="w-4 btn btn-lg btn-outline-primary">수정</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{|/board/delete?id=${list.id}|}" type="button" class="w-4 btn btn-lg btn-outline-danger">삭제</a>
+          </div>
+        </div>
+      </div> 
+   </div>         
+
+
+														<!--$달라는 진짜 끌어오는 변수
+															#샵은 변수명의 의미로 쓰인다-->
+<form th:action="@{|/reply/create?id=${list.id}|}" th:object="${replyForm}" method="POST">
+	<div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+   		<div th:each="err : ${#fields.allErrors()}" th:text="${err}"/>
+	</div>
+	<div class="input-group">
+  	<span class="input-group-text"><input type="submit" class="btn btn-Success" value="댓글 등록"></span>
+ 	 <textarea class="form-control" name="content" aria-label="With textarea"></textarea>
+	</div>
+	
+	
+</form>
+				
+
+
+
+
+<div class="bd-example">
+<table class="table">
+  <thead class="table-light">
+    <tr>
+		
+      <h6 th:text="|${#lists.size(list.replyList)}개의 리플|"></h6>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  	<div th:each="reply : ${list.replyList}" class="shadow p-3 mb-3 bg-body-tertiary rounded">
+		  
+		  
+		  
+		  
+		  
+		  
+		  <!-- Button trigger modal -->
+<div class="d-flex justify-content-end">		  
+<a th:href="@{|/reply/delete?id=${reply.id}&id=${board.id}|}" type="button" class="btn-close" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@{|/reply/delete?id=${reply.id}|}">
+</a>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">삭제 확인</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        정말 댓글을 삭제 하시겠습니까?
+      </div>
+      <div class="modal-footer">
+		  <a th:href="@{|/reply/delete?id=${reply.id}&id=${board.id}|}" type="button" class="btn btn-secondary">삭제</a>
+       	  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+	   
+	
+	   
+	   
+	   <h5  th:text="${reply.content}"></h5>
+	  
+	   <div class="d-flex justify-content-end">
+		   
+		   <span class="badge rounded-pill text-bg-success">
+			   
+	   			<a th:text="${#temporals.format(reply.createDate, 'yyyy년 MM월 dd일 HH:mm')}"></a>
+		   </span>
+		   
+	   </div>
+   	</div>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+           
+  </div>  
+</html>

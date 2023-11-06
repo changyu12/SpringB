@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+th 없이
+<br>
+<img src="images/cat.jpeg" height="100">
+<br><br>
+th 사용
+<br>
+<img th:src="@{images/cat.jpeg}" height="100">
+</body>
+</html>

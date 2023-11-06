@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<br>
+1<br>
+현재 시각은 : <a th:text="${nowtime}">nowtime</a>
+
+<br>
+2<br>
+<a th:text="'현재 시각은 : ' + ${nowtime}">nowtime</a>
+
+<br>
+2<br>
+<a th:text="|현재 시각은 : ${nowtime}|">nowtime</a>
+
+<br>
+4<br>
+현재 시각은 : [[${nowtime}]]
+
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+
+	
+	
+	<div layout:fragment="content">
+
+
+<div class="container mt-6">
+  <div class="mb-9">
+          <div class="row align-items-center justify-content-between g-3 mb-4">
+            <div class="col-auto">
+              <h2 class="mb-0">공지사항 상세보기</h2>
+            </div>
+            <div class="col-auto">
+              <div class="row g-3">
+                <div class="col-auto">
+                  <a class="btn btn-phoenix-danger" th:href="@{|/notice/delete?nid=${notice.nid}|}">삭제</a>
+                </div>
+                <div class="col-auto">
+                  <a class="btn btn-phoenix-success" th:href="@{|/notice/update?nid=${notice.nid}|}">수정</a>
+                </div>
+              </div>
+            </div>
+          </div>
+       <div class="carousel slide carousel-fade" id="carouselExampleControls" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+
+    <button class="active" type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+
+ </div>
+<img th:src="@{|http://chandool.cdn1.cafe24.com/${notice.nfile}|}" alt="First slide" />
+
+  </div>
+
+</div>
+
+<div th:utext="${notice.ncontent}">content</div>
+
+</div>
+</div>
+
+</html>

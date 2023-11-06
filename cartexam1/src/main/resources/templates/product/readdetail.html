@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+ [[${list.id}]] 
+ <br>
+ [[${list.name}]]
+ <br>
+ [[${list.productid}]] 
+ <br>
+ [[${list.price}]]
+ <br>
+ <form th:action="@{|/item/create?id=${list.id}|}" method="post">
+ <input type="hidden" name="productid" th:value="${list.productid} ">
+<input type="hidden" name="name" th:value="${list.name} ">
+<input type="hidden" name="price" th:value="${list.price} ">
+<input type="submit" value="장바구니 담기">
+  <p><a href="/cart/readdetail">장바구니</a>
+
+</form>
+</body>
+</html>

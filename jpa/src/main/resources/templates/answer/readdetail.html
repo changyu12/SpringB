@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	
+	<a th:text="${list.id}"></a> / 
+	<a th:text="${list.subject}"></a> / 
+	<a th:text="${list.content}"></a> / 
+	
+	<br>
+	
+	<a th:href="@{|/answer/update?id=${list.id}|}">수정</a>
+	<a th:href="@{|/answer/delete?id=${list.id}|}">삭제</a>
+	
+	<br>
+
+</body>
+</html>

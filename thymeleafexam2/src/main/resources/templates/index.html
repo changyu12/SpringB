@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:insert="~{header::header}"></div>
+<br><br><br>
+<a href="/member/readdetail">상세보기</a>
+<a th:href="@{/member/readdetail}">상세보기</a>
+<a th:href="@{/member/create}">생성</a>
+<br><br><br>
+<div th:insert="~{footer::footer}"></div>
+</body>
+</html>

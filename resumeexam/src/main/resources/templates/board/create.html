@@ -1,0 +1,24 @@
+<html  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+	<div layout:fragment="content">
+	<div class="container" style="width: 50%;">
+<form th:action="@{/board/create}" th:object="${boardForm}" method="post">
+	<div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+   		<div th:each="err : ${#fields.allErrors()}" th:text="${err}"/>
+	</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">제목</label>
+  <input type="text" class="form-control" name="subject" placeholder="제목을 입력하세요">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+  <textarea class="form-control" name="content" rows="12"></textarea>
+</div>
+<input class="w-4 btn btn-lg btn-outline-primary" type="submit" value="등록">
+
+</form>
+</div>
+	</div>
+</html>

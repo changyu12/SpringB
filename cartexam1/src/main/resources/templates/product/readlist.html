@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <th:block th:each="list:${lists}">
+ 
+ [[${list.id}]] / <a th:href="@{|/product/readdetail?id=${list.id}|}">[[${list.name}]]</a> 
+ / [[${list.productid}]] / [[${list.price}]]
+ <br>
+ </th:block>
+</body>
+</html>

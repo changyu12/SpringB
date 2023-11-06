@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+
+	<insert id="create" parameterType="com.example.boot3mybatis.notice.Notice">
+  		<![CDATA[
+			INSERT INTO notice
+			(nid, ntitle, ncontent,nfile, ndate)
+			VALUES
+			(#{nid}, #{ntitle}, #{ncontent},#{nfile},#{ndate})
+		]]>
+	</insert>
+  
+	<select id="readlist" resultType="com.example.boot3mybatis.notice.Notice">
+  		<![CDATA[
+	  		SELECT * 
+	  		FROM notice
+  		]]>
+  	</select>
+  
+  	<select id="readdetail" parameterType="String" resultType="com.example.boot3mybatis.notice.Notice">
+  		<![CDATA[
+	  		SELECT * 
+	  		FROM notice
+	  		WHERE nid = #{nid}
+  		]]>
+  	</select>
+  
+  	
+	
+	<update id="update" parameterType="com.example.boot3mybatis.notice.Notice">
+  		<![CDATA[
+	  		UPDATE notice
+	  		SET ntitle = #{ntitle}, ncontent = #{ncontent}, nfile = #{nfile}
+	  		WHERE nid = #{nid}
+  		]]>
+  	</update>
+  	
+  	<delete id="delete" parameterType="String">
+  		<![CDATA[
+	  		DELETE FROM notice
+	  		WHERE nid = #{nid}
+  		]]>
+  	</delete>
+ </mapper>

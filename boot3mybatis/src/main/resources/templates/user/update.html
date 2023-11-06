@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+
+	
+	
+	<div layout:fragment="content">
+
+
+       <div class="container">
+        <div class="row flex-center min-vh-100 py-5">
+          <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3"><a class="d-flex flex-center text-decoration-none mb-4" href="../../../index.html">
+              <div class="d-flex align-items-center fw-bolder fs-5 d-inline-block"><img src="../../../assets/img/icons/logo.png" alt="phoenix" width="58" />
+              </div>
+            </a>
+            <div class="text-center mb-7">
+              <h3 class="text-1000">회원 정보수정</h3>
+              <p class="text-700">회원을 정보를 수정하세요</p>
+            </div>
+            
+            <div class="position-relative">
+              <hr class="bg-200 mt-5 mb-4" />
+              
+            </div>
+             <form th:action="@{/user/update}" th:object="${user}" method="post">
+          
+             
+             		
+                <input name="username" type="hidden" th:value="${user.username}" />
+              
+          
+            <div class="mb-3 text-start">
+              <label class="form-label" for="password">비밀번호</label>
+              <div class="form-icon-container">
+                <input class="form-control form-icon-input" name="password" type="password"  th:value="${user.password}" /><span class="fas fa-key text-900 fs--1 form-icon"></span>
+              </div>
+            </div>
+            <div class="mb-3 text-start">
+              <label class="form-label" for="password">이름</label>
+              <div class="form-icon-container">
+                <input class="form-control form-icon-input" name="uname" type="text" th:value="${user.uname}" /><span class="fas fa-key text-900 fs--1 form-icon"></span>
+              </div>
+            </div>
+            <div class="row flex-between-center mb-7">
+              <div class="col-auto">
+                
+              </div>
+              
+            </div>
+            <input type="submit" value="수정" class="btn btn-primary w-100 mb-3"></input>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+  
+</div>
+
+</html>

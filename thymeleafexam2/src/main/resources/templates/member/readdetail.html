@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p> <a th:text="${member.mid}">아이디  :</a></p>
+	<p> <a th:text="${member.mpw}">암호	:</a></p>
+	<p> <a th:text="${member.mname}">성명	:</a></p>
+	<p>	<a th:text="|현재 시간은 : ${nowtime}|">nowtime</a></p>
+	
+	<th:block th:if="${member.mid == null}">
+		<p>값이 없습니다.</p>
+	</th:block>
+	<th:block th:if="${member.mid}">
+		<p>값이 있습니다.</p>
+	</th:block>
+</body>
+</html>

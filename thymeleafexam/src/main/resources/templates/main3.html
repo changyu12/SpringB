@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p th:text="${cust}">message</p>
+
+<br>
+	<p>번호 : <h6 th:text="${cust.cno}">cno</h6></p>
+	<p>아이디 : <h6 th:text="${cust.cid}">cid</h6></p>
+	<p>비밀번호 : <h6 th:text="${cust.cpw}">cpw</h6></p>
+	<p>메일 : <h6 th:text="${cust.cmail}">cmail</h6></p>
+	<p>주소 : <h6 th:text="${cust.caddr}">caddr</h6></p>
+	
+	<table border="1">
+		<tr>
+			<td>번호</td>
+			<td th:text="${cust.cno}">cno</td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td th:text="${cust.cid}">cid</td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td th:text="${cust.cpw}">cpw</td>
+		</tr>
+		<tr>
+			<td>메일</td>
+			<td th:text="${cust.cmail}">cmail</td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td th:text="${cust.caddr}">caddr</td>
+		</tr>
+		
+		
+	</table>
+
+</body>
+</html>

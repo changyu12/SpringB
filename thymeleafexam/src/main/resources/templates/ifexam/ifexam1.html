@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<th:block th:if="${customer.cmail == null}">
+		<p>== 값이 없습니다. </p>
+	</th:block>
+	
+	<th:block th:if="${customer.cmail eq null}">
+		<p>eq 값이 없습니다. </p>
+	</th:block>
+	
+	<th:block th:if="${customer.cmail}">
+		<p>값이 있습니다.  </p>
+	</th:block>
+	
+</body>
+</html>

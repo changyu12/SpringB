@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Log In | Unify - Multipurpose Responsive Template</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="./assets/css/vendor.min.css">
+
+  <!-- CSS Unify Template -->
+  <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0">
+ <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+ <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body class="d-flex align-items-center min-h-100 bg-dark">
+	
+	
+	
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main" class="flex-grow-1 overflow-hidden">
+    <!-- Content -->
+    <div class="container content-space-t-1 content-space-b-2">
+      <div class="mx-lg-auto" style="max-width: 55rem;">
+        <div class="d-flex justify-content-center align-items-center flex-column min-vh-lg-100">
+          <!-- ========== HEADER ========== -->
+          <header id="header" class="navbar navbar-height navbar-light mb-3">
+            <div class="container">
+              <a class="navbar-brand mx-auto" href="./index.html" aria-label="Unify">
+                <img class="navbar-brand-logo" src="https://htmlstream.com/unify/assets/svg/logos/logo-white.svg" alt="Image Description">
+              </a>
+            </div>
+          </header>
+          <!-- ========== END HEADER ========== -->
+
+          <div class="position-relative">
+            <!-- Card -->
+            <div class="card card-shadow card-login">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <!-- Form -->
+                    <form class="js-validate needs-validation" novalidate>
+                      <div class="text-center">
+                        <div class="mb-5">
+                          <h1 class="card-title">로그인</h1>
+                        </div>
+
+                        
+                     
+                            <a href="javascript:kakaologin()"  class="btn btn-phoenix-secondary w-100 mb-3"><img src="/images/kakao_login.png" style="width:480px; height: 100px;" class="fab fa-google text-danger me-2 fs--1"></img></a>
+                         <div id="naver_id_login" class="btn btn-phoenix-secondary w-100"></div>
+                       
+
+                        <span class="divider-center text-muted mb-4">OR</span>
+                      </div>
+
+                      <!-- Form -->
+                      <div class="mb-4">
+                        <label class="form-label" for="signinSrEmail">아이디</label>
+                        <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail" tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required>
+                        <span class="invalid-feedback">Please enter a valid email address.</span>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="mb-4">
+                        <label class="form-label" for="signupSrPassword" tabindex="0">비밀번호</label>
+
+                        <div class="input-group-merge">
+                          <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="8+ characters required" aria-label="8+ characters required" required minlength="8" data-hs-toggle-password-options='{
+                                   "target": "#changePassTarget",
+                                   "defaultClass": "bi-eye-slash",
+                                   "showClass": "bi-eye",
+                                   "classChangeTarget": "#changePassIcon"
+                                 }'>
+                         
+
+                          <span class="invalid-feedback">Please enter a valid password.</span>
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      
+
+                      <div class="d-grid gap-4">
+                        <button type="submit" class="btn btn-primary btn-lg">로그인</button>
+                        <p class="card-text text-muted">회원이 아니신가요? <a class="link" href="/user/create">회원가입</a></p>
+                      </div>
+                    </form>
+                    <!-- End Form -->
+                  </div>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4 d-md-flex justify-content-center flex-column bg-soft-primary p-8 p-md-5" style="background-image: url(https://htmlstream.com/unify/assets/svg/components/wave-pattern.svg);">
+                  <h5 class="mb-4">저희사이트에 방문해주셔서 감사합니다</h5>
+
+                  <!-- List Checked -->
+                  <ul class="list-checked list-checked-primary list-py-2">
+                    <li class="list-checked-item">차원이 다른 서비스</li>
+                    <li class="list-checked-item">한눈에 보기 쉬운 편안함</li>
+                  </ul>
+					<img src="/images/dog.jpeg">
+              
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </div>
+            <!-- End Card -->
+
+            <!-- SVG Shape -->
+            <figure class="position-absolute top-0 end-0 zi-n1 d-none d-sm-block mt-n7 me-n10" style="width: 4rem;">
+              <img class="img-fluid" src="https://htmlstream.com/unify/assets/svg/components/pointer-up.svg" alt="Image Description">
+            </figure>
+            <!-- End SVG Shape -->
+
+            <!-- SVG Shape -->
+            <figure class="position-absolute bottom-0 start-0 d-none d-sm-block ms-n10 mb-n10" style="width: 15rem;">
+              <img class="img-fluid" src="https://htmlstream.com/unify/assets/svg/components/curved-shape.svg" alt="Image Description">
+            </figure>
+            <!-- End SVG Shape -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Content -->
+  </main>
+  
+	
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- JS Implementing Plugins -->
+  <script src="./assets/js/vendor.min.js"></script>
+
+  <!-- JS Unify -->
+  <script src="./assets/js/theme.min.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    (function() {
+      // INITIALIZATION OF BOOTSTRAP VALIDATION
+      // =======================================================
+      HSBsValidation.init('.js-validate', {
+        onSubmit: data => {
+          data.event.preventDefault()
+          alert('Submited')
+        }
+      })
+
+
+      // INITIALIZATION OF TOGGLE PASSWORD
+      // =======================================================
+      new HSTogglePassword('.js-toggle-password')
+    })()
+  </script>
+  <script>
+//발급 받은 키
+Kakao.init("9eda72310d10e70186b843a0809cac6c");
+
+function kakaologin() {
+	window.Kakao.Auth.login({
+		// 개발자 사이트에서 체크한 항목들과 반드시 일치해야 한다. 
+		scope:'profile_nickname, account_email, gender',
+		success: function (authObj) 
+			{window.Kakao.API.request({url:'/v2/user/me',
+			success:res => {
+				
+				const nickname = res.kakao_account.profile.nickname;
+				const email = res.kakao_account.email;
+				const gender = res.kakao_account.gender;
+				
+				console.log(nickname);
+				console.log(email);
+				console.log(gender);
+				
+				kakaoprocess(nickname, email, gender);
+				
+			}
+		});
+	}
+});
+}
+
+function kakaoprocess(nickname, email, gender) {
+
+	$.ajax({
+		type:"POST",
+		url:"/kakaocheck",
+		data:{nickname:nickname,
+			  uemail:email,
+			  gender:gender
+		},
+		beforeSend : function(xhr){
+			/* 스프링 시큐리티 설정으로 인해 전송 전에 헤더에 csrf값을 넣어야만한다.  */
+			xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+		},
+		success : function(result) {
+			alert("카카오 로그인 성공, 메인 화면으로 이동합니다.");
+			window.location.assign('/');
+		},
+		error : function(request, status, error){
+			alert("카카오 로그인 실패, 최초 한번 사이트 회원 가입을 하셔야 합니다.");
+			window.location.assign('/customer/create');
+		}
+	})
+}
+
+</script>
+  <!-- //네이버 로그인 버튼 노출 영역 -->
+  <script type="text/javascript">
+  	var naver_id_login = new naver_id_login("8S_pPtCdskNgUql1ARqx", "http://localhost:8080/naverlogin");
+  	var state = naver_id_login.getUniqState();
+  	 naver_id_login.setButton("green", 3,103);	//단추 모양,크기 
+  	naver_id_login.setDomain("http://localhost:8080");
+  	naver_id_login.setState(state);
+  	//별도의 팝업창을 띄우지 않고 로그인 처리
+  	//naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
+  </script>
+  
+</body>
+</html>

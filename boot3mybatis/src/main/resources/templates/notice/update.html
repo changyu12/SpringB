@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+
+	
+	
+	<div layout:fragment="content">
+
+	
+<div class="container mt-7">
+	
+	
+<form th:action="@{/notice/update}" method="post" enctype="multipart/form-data">
+          <div class="row g-3 flex-between-end mb-5">
+            <div class="col-auto">
+              <h2 class="mb-2">공지사항 수정</h2>
+              <h5 class="text-700 fw-semi-bold">공지 내용을 수정하세요</h5>
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-phoenix-secondary me-2 mb-2 mb-sm-0" type="button">Discard</button>
+              <button class="btn btn-phoenix-primary me-2 mb-2 mb-sm-0" type="button">Save draft</button>
+              <button class="btn btn-primary mb-2 mb-sm-0" type="submit">Publish product</button>
+            </div>
+          </div>
+          <div class="row g-5">
+            <div class="col-12 col-xl-8">
+              <h4 class="mb-3">공지사항 제목</h4>
+              <input class="form-control mb-5" name="ntitle" type="text" th:value="${notice.ntitle}"/>
+              <div class="mb-6">
+                <h4 class="mb-3"> 공지사항 내용</h4>
+                <textarea class="tinymce" id="summernote" name="ncontent" th:text="${notice.ncontent}"></textarea>
+              </div>
+              <h4 class="mb-3">사진 등록</h4>
+                <div class="fallback">
+                  기존파일 : <a th:utext="${notice.nfile}">nfile</a><input name="file" type="file" />
+                </div>
+
+              <input name="nid" type="hidden" th:value="${notice.nid}"/>
+              <input name="nfile" type="hidden" th:value="${notice.nfile}"/>
+
+       <input class="btn btn-primary mb-2 mb-sm-0" value="등록" type="submit" />
+              </div>
+
+
+ </div>
+ </form>
+ 
+</div>
+</div>
+
+    
+
+</html>

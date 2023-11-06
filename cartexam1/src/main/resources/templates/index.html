@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+i am  인덱스
+
+<p><a href="/user/create">회원 등록</a>
+<p><a href="/login">회원 로그인</a>
+<p><a href="/logout">회원 로그아웃</a>
+
+
+<p><a href="/product/create">제품 등록</a>
+<p><a href="/product/readlist">제품 목록</a>
+
+
+<br>
+		<br>
+<div sec:authorize="isAnonymous()"> 로그인 안함</div>
+		
+		<br>
+<div sec:authorize="isAuthenticated()">로그인 중</div>	
+
+
+  <div th:if="${#authentication.name == 'anonymousUser'}">로그인 안함</div>
+
+  <div th:if="${#authentication.name != 'anonymousUser'}">로그인 중
+  <p><a href="/cart/readdetail">장바구니</a>
+  
+  </div>
+<div th:text="${#authentication.name} + ' 님 로그인 중'"></div>
+ 
+
+</body>
+</html>

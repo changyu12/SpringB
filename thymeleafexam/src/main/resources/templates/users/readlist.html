@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<th:block th:each="friend:${user.friendarray}">
+	
+	<p th:text="${friend}">friend</p>
+	
+</th:block>
+	
+<th:block th:each="friend:${user.friendarray}">
+	
+	[[${friend}]]<br><br>
+	
+</th:block>	
+	
+	
+</form>
+
+</body>
+</html>
