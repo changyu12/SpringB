@@ -1,0 +1,14 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <th:block th:each="list:${lists}">
+ 
+ [[${list.cid}]] / <a th:href="@{|/s3/readdetail?id=${list.cid}|}">[[${list.file}]]</a> 
+
+ <br>
+ </th:block>
+</body>
+</html>

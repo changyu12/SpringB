@@ -27,9 +27,11 @@ i am  인덱스
   <div th:if="${#authentication.name == 'anonymousUser'}">로그인 안함</div>
 
   <div th:if="${#authentication.name != 'anonymousUser'}">로그인 중
+	  
   <p><a href="/cart/readdetail">장바구니</a>
   
   </div>
+  
 <div th:text="${#authentication.name} + ' 님 로그인 중'"></div>
  
 

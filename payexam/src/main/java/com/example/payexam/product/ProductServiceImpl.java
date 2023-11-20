@@ -21,16 +21,12 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void create(Product product, MultipartFile file) {
 		
-		
 		String uuid = UUID.randomUUID().toString();
-		
 		String filename = uuid + "_" + file.getOriginalFilename();
 		
-		
 		String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-		String LOGIN = "awesomeclass";
-		String PSW = "guest0505";
-		
+		String LOGIN = "chandool";
+		String PSW = "rb123123!";
 		FTPClient con = null;
 		
 		try {

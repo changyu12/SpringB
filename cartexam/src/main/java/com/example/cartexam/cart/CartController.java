@@ -49,7 +49,7 @@ public class CartController {
 		
 		System.out.println(imp_uid);
 		
-		deliveryService.create(imp_uid);
+		//deliveryService.create(imp_uid);
 		
 		return "";
 	}

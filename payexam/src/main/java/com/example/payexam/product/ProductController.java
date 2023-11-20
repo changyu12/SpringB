@@ -18,6 +18,7 @@ public class ProductController {
 
 	@GetMapping("/create")
 	public String create() {
+		
 		return "product/create";
 	}
 	
